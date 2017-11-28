@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- <constant name="struts.devMode" value="true" /> -->
+	<!-- 把action扩展名改为.do -->
+	<!-- <constant name="struts.action.extension" value="do"/> -->
+	<!-- 把主题设为simple -->
+	<!-- <constant name="struts.ui.theme" value="simple" /> -->
+
+	<!-- 修改动态方法的调用,true 动态方法，false 非动态方法 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<!-- 分页查询 -->
+		<action name="list" class="userAction" method="list">
+			<result name="list">WEB-INF/jsp/list.jsp</result>
+		</action>
+		<!-- 删除用户 -->
+		<action name="delete" class="userAction" method="delete">
+			<result name="list">WEB-INF/jsp/list.jsp</result>
+		</action>
+		<!-- 跳转用户添加页面 -->
+		<action name="add" class="userAction" method="add">
+			<result name="add">WEB-INF/jsp/add.jsp</result>
+		</action>
+		<!-- 添加用户 -->
+		<action name="addUser" class="userAction" method="addUser">
+			<result name="addUser">WEB-INF/jsp/add.jsp</result>
+		</action>
+		<!-- 跳转用户分析页面 -->
+		<action name="analyze" class="userAction" method="analyze">
+			<result name="analyze">WEB-INF/jsp/analyze.jsp</result>
+		</action>
+		<!-- 用name模糊查询用户 -->
+		<action name="findName" class="userAction" method="findName">
+			<result name="findName">WEB-INF/jsp/list.jsp</result>
+		</action>
+		<!-- 用name模糊查询用户 -->
+		<action name="edit" class="userAction" method="edit">
+			<result name="edit">WEB-INF/jsp/add.jsp</result>
+		</action>
+	</package>
+</struts>

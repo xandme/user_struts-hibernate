@@ -1,0 +1,300 @@
+/*body基本样式设置*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 20px;
+}
+
+/*div公用样式设置*/
+div {
+	text-align: center;
+	/*文字居中对齐*/
+	line-height: 50px;
+	/*固定高度，浏览器高度改变时，其高度不会改变*/
+}
+
+/*头部*/
+.head {
+	height: 100px;
+	/*height: 13%;*/
+	/*固定高度*/
+	background: #478fb7;
+	/*背景颜色*/
+}
+
+.mainpanel {
+	width: 100%;
+	height: 635px;
+}
+
+.left {
+	width: 15%;
+	/*width: 220px;*/
+	min-width: 150px;
+	height: 100%;
+	float: left;
+}
+
+/*右侧栏*/
+.right {
+	width: 85%;
+	/*width: 1299px;*/
+	height: 100%;
+	float: right;
+}
+
+.logo {
+	width: 150px;
+	height: 100%;
+	float: left;
+}
+
+.logo img {
+	margin-top: 8%;
+	width: 70px;
+	height: 70px;
+}
+
+.logoname {
+	width: 250px;
+	height: 100%;
+	line-height: 100px;
+	color: white;
+	float: left;
+}
+
+.exit {
+	width: 80px;
+	height: 100%;
+	margin-right: 50px;
+	line-height: 100px;
+	color: white;
+	float: right;
+}
+
+.help {
+	width: 80px;
+	height: 100%;
+	color: white;
+	float: right;
+	line-height: 100px;
+}
+
+.head a:link {
+	color: white;
+}
+
+.head a:visited {
+	color: white;
+}
+
+.left-guide {
+	width: 100%;
+	height: 100%;
+	background: #eee;
+	margin: 0 auto;
+}
+
+.left-guide ul {
+	padding-top: 10px;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	border: none;
+	margin-top: 10px;
+}
+
+.li-box {
+	margin: 0 auto;
+	width: 90%;
+	border-left: 6px solid grey;
+	border-right: 1px solid grey;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+}
+
+li a:link {
+	color: black;
+}
+
+.li-box:hover {
+	background: white;
+	border-left: 6px solid #478fb7;
+	color: #478fb7;
+}
+
+li a:visited {
+	color: black;
+}
+
+.picture {
+	width: 100%;
+	height: 120px;
+	margin-top: 250px;
+}
+
+.picture img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.activeUser {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	/*background-color: white;*/
+}
+
+a {
+	text-decoration: none;
+}
+
+.search {
+	width: 100%;
+	height: 10%;
+	line-height: 63.5px;
+	text-align: left;
+}
+
+.search span {
+	margin-left: 3%;
+	font-size: 18px;
+}
+
+.search input {
+	height: 22px;
+}
+
+.search button {
+	height: 24px;
+	width: 80px;
+	margin-left: 10px;
+}
+
+.information {
+	width: 100%;
+	height: 90%;
+}
+
+.tableInformation {
+	width: 100%;
+	padding-top: 10px;
+}
+
+table {
+	margin: 0 auto;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+tr {
+	height: 35px;
+}
+
+thead{
+	background:#eee;
+}
+td, th {
+	padding-left: 15px;
+	border: 1px solid #666666
+}
+
+tbody td {
+	font-size: 14px;
+}
+
+th {
+	background-color: #eee;
+}
+
+.add-edit {
+	width: 100%;
+	height: 80%;
+	background-color: yellow;
+	/*text-align: left;*/
+}
+
+.ae-title {
+	width: 95%;
+	height: 7%;
+	line-height: 45px;
+	/*border: 1px solid red;*/
+	margin: 0 auto;
+}
+
+.ae-information {
+	margin: 0 auto;
+	width: 95%;
+	height: 60%;
+	border-bottom: 2px solid lightgrey;
+	text-align: left;
+	/* border: 1px solid red; */
+	/*padding: 0;*/
+}
+
+.ae-button {
+	width: 100%;
+	height: 20%;
+	/*background-color: blue;*/
+}
+
+.ae-button button {
+	height: 26px;
+	width: 110px;
+	margin: 0 20px;
+}
+
+.add-edit ul {
+	margin-left: 5%;
+}
+
+.ae-information input[type=text], input[type=password], input[type=email]
+	{
+	height: 26px;
+	width: 650px;
+}
+
+.add-edit label {
+	margin-right: 20px;
+}
+
+.add-edit h3 {
+	text-align: center;
+}
+
+.red {
+	color: #F60;
+}
+
+.pageSet a {
+	text-decoration: none;
+	padding: 0 4px;
+}
+
+.pageSet li {
+	list-style: none;
+	display: inline;
+}
+.skipPage{
+	width:30px;
+	height:20px;
+	border:1px solid grey;
+}
+.canvas1{
+    width: 400px;
+    height: 400px;
+    float:left;
+}
+.canvas2{
+    width: 400px;
+    height: 400px;
+    float:left;
+}

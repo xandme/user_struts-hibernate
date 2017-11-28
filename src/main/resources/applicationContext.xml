@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans
+        classpath:org/springframework/beans/factory/xml/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        classpath:org/springframework/context/config/spring-context-4.3.xsd
+        http://www.springframework.org/schema/tx
+        classpath:org/springframework/transaction/config/spring-tx-4.3.xsd
+        http://www.springframework.org/schema/aop
+        classpath:org/springframework/aop/config/spring-aop-4.3.xsd">
+	<context:annotation-config></context:annotation-config>
+	<!-- 引入外部属性文件 -->
+	<context:property-placeholder location="classpath:application.properties" />
+	
+	<!-- 配置bean的自动扫描与装配 -->
+	<context:component-scan base-package="com.qingshixun.project"></context:component-scan>
+
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${driver}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${user}" />
+		<property name="password" value="${password}" />
+	</bean>
+
+	<!-- 配置SessionFactory(整合Hibernate)事务线程sessio -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="myDataSource"></property>
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+	</bean>
+
+	<!-- 引入spring提供的hibernate操作模板 -->
+	<bean id="userDao" class="com.qingshixun.project.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 3，配置声明式事务 -->
+	<!-- 3.1，配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 3.2，配置基于注解的事务支持 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>
